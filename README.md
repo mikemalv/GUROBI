@@ -105,10 +105,21 @@ graph LR
 
 ## 🚀 Quick Start
 
-### 1. Clone and Setup
+### 1. Clone the Repository
 ```bash
-cd /path/to/project
+git clone https://github.com/mikemalv/GUROBI.git
+cd GUROBI
 ```
+
+### 2. Download Data Files
+Download CSV files from [Rebrickable Downloads](https://rebrickable.com/downloads/):
+- themes.csv, sets.csv, inventories.csv, colors.csv
+- parts.csv, part_categories.csv
+- inventory_parts.csv, inventory_sets.csv
+- minifigs.csv, inventory_minifigs.csv
+- elements.csv, part_relationships.csv
+
+> ⚠️ **Note**: CSV files are not included in the repo due to GitHub's file size limits.
 
 ### 2. Install SnowCLI
 ```bash
@@ -246,15 +257,18 @@ Selected Sets:
 ## 📁 Project Structure
 
 ```
-GURABI/
+GUROBI/
 ├── 📓 01_Prepare_Data_Snowflake.ipynb      # Data loading
 ├── 📓 02_Optimization_Model_Small_Snowflake.ipynb  # Small demo
 ├── 📓 03_Optimization_Model_Large_Snowflake.ipynb  # Full optimization
 ├── 📄 README.md                             # This file
 ├── 📄 INSTRUCTION.md                        # Detailed setup guide
 ├── 📄 prompt.txt                            # Project context
-├── 📊 *.csv                                 # Rebrickable data files
+├── 📄 .gitignore                            # Git ignore rules
 └── 📁 OLD/                                  # Archived files
+
+# Download separately from Rebrickable:
+# ├── 📊 *.csv                              # Data files (not in repo)
 ```
 
 ---
