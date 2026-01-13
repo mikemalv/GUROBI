@@ -21,7 +21,7 @@ venv/
 
 # Data files (large CSVs - download from https://rebrickable.com/downloads/)
 # These are excluded because some exceed GitHub's 100MB limit
-*.csv
+DATA/
 
 # Snowflake
 .snowflake/

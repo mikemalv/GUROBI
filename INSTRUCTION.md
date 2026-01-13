@@ -68,7 +68,7 @@ Deliver insights from toy brick inventory data using mathematical optimization t
 
 4. **Upload CSV Files**
    ```bash
-   cd /path/to/csv/files
+   cd DATA/
    snow stage copy themes.csv @TOY_BRICK_DB.RAW_DATA.REBRICKABLE_STAGE -c demo
    snow stage copy sets.csv @TOY_BRICK_DB.RAW_DATA.REBRICKABLE_STAGE -c demo
    snow stage copy inventories.csv @TOY_BRICK_DB.RAW_DATA.REBRICKABLE_STAGE -c demo
@@ -163,14 +163,19 @@ themes (1) ──┬── sets (N)
 ## File Structure
 
 ```
-GURABI/
+GUROBI/
 ├── 01_Prepare_Data_Snowflake.ipynb      # Data loading notebook
 ├── 02_Optimization_Model_Small_Snowflake.ipynb  # Small example
 ├── 03_Optimization_Model_Large_Snowflake.ipynb  # Large scale
-├── *.csv                                 # Rebrickable data files
-├── prompt.txt                            # Project context
-├── INSTRUCTION.md                        # This file
-└── OLD/                                  # Archive folder
+├── README.md                            # Project documentation
+├── INSTRUCTION.md                       # This file
+├── prompt.txt                           # Project context
+├── .gitignore                           # Git ignore rules
+├── DATA/                                # CSV data files (not in git)
+│   ├── themes.csv
+│   ├── sets.csv
+│   └── ... (12 files total)
+└── OLD/                                 # Archive folder
 ```
 
 ---

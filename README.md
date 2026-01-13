@@ -112,14 +112,18 @@ cd GUROBI
 ```
 
 ### 2. Download Data Files
-Download CSV files from [Rebrickable Downloads](https://rebrickable.com/downloads/):
-- themes.csv, sets.csv, inventories.csv, colors.csv
-- parts.csv, part_categories.csv
-- inventory_parts.csv, inventory_sets.csv
-- minifigs.csv, inventory_minifigs.csv
-- elements.csv, part_relationships.csv
+Download CSV files from [Rebrickable Downloads](https://rebrickable.com/downloads/) and place them in the `DATA/` folder:
+```bash
+mkdir -p DATA
+# Download and place these files in DATA/:
+# themes.csv, sets.csv, inventories.csv, colors.csv
+# parts.csv, part_categories.csv
+# inventory_parts.csv, inventory_sets.csv
+# minifigs.csv, inventory_minifigs.csv
+# elements.csv, part_relationships.csv
+```
 
-> ⚠️ **Note**: CSV files are not included in the repo due to GitHub's file size limits.
+> ⚠️ **Note**: The `DATA/` folder is excluded from Git due to GitHub's file size limits.
 
 ### 2. Install SnowCLI
 ```bash
@@ -265,11 +269,14 @@ GUROBI/
 ├── 📄 INSTRUCTION.md                        # Detailed setup guide
 ├── 📄 prompt.txt                            # Project context
 ├── 📄 .gitignore                            # Git ignore rules
+├── 📁 DATA/                                 # CSV data files (download separately)
+│   ├── themes.csv
+│   ├── sets.csv
+│   ├── ... (12 CSV files total)
 └── 📁 OLD/                                  # Archived files
-
-# Download separately from Rebrickable:
-# ├── 📊 *.csv                              # Data files (not in repo)
 ```
+
+> ⚠️ The `DATA/` folder is excluded from Git. Download CSV files from Rebrickable.
 
 ---
 
