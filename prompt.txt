@@ -1,0 +1,74 @@
+# Master Project Prompt - prompt.txt file
+
+## Project Overview
+Toy Brick Assortment Optimization using Gurobi and Snowflake. This project demonstrates mathematical optimization techniques for solving product assortment problems using toy brick datasets from Rebrickable.
+
+## Current Project
+**Toy Brick Set Optimization** - Given a collection of toy bricks (parts in specific colors), determine which sets can be built to maximize value while minimizing leftover pieces.
+
+## Database Schemas & Tables
+
+### Database: TOY_BRICK_DB
+### Schema: RAW_DATA
+
+**Core Tables:**
+- `themes` (id, name, parent_id) - 487 rows
+- `sets` (set_num, name, year, theme_id, num_parts, img_url) - 26,015 rows
+- `inventories` (id, version, set_num) - 44,395 rows
+- `colors` (id, name, rgb, is_trans, num_parts, num_sets, y1, y2) - 275 rows
+- `part_categories` (id, name) - 76 rows
+- `parts` (part_num, name, part_cat_id, part_material) - 60,792 rows
+- `inventory_parts` (inventory_id, part_num, color_id, quantity, is_spare, img_url) - 1,460,938 rows
+- `inventory_sets` (inventory_id, set_num, quantity) - 4,849 rows
+- `minifigs` (fig_num, name, num_parts, img_url) - 16,506 rows
+- `inventory_minifigs` (inventory_id, fig_num, quantity) - 24,792 rows
+- `elements` (element_id, part_num, color_id, design_id) - 108,720 rows
+- `part_relationships` (rel_type, child_part_num, parent_part_num) - 35,527 rows
+
+**Derived Tables (for optimization):**
+- `part_color_pairs` (part_color_id, part_num, color_id, part_name, color_name)
+- `set_part_requirements` (set_num, set_name, year, theme_name, part_color_id, part_num, color_id, quantity)
+
+**Views:**
+- `v_set_parts` - Comprehensive view joining sets, themes, inventories, parts, colors
+- `v_part_color_inventory` - Aggregated part-color quantities
+
+## Data Added
+- Rebrickable dataset from https://rebrickable.com/downloads/
+- CSV files loaded via SnowCLI stage copy commands
+
+## Key Requirements & Specifications
+- Maximize parts used (minimize leftover pieces)
+- Alternative: Maximize number of sets built
+- Constraint: For each part-color combination, total used ≤ available quantity
+
+## Technical Stack & Dependencies
+- **Data Platform:** Snowflake
+- **Optimization Solver:** Gurobi (requires commercial license)
+- **Python Libraries:** snowflake-snowpark-python, gurobipy, pandas, numpy
+- **CLI Tool:** SnowCLI v3.14.0
+
+## Configuration & Setup
+- Snowflake Connection: `demo` (SFSENORTHAMERICA-DEMO_MMALVEIRA)
+- Database: TOY_BRICK_DB
+- Schema: RAW_DATA
+- Stage: REBRICKABLE_STAGE
+- Warehouse: GEN2_SMALL
+
+## Core Functionality
+1. **Data Preparation (Notebook 01):** Load and transform Rebrickable data
+2. **Small-Scale Optimization (Notebook 02):** Demo with 4 owned sets, 50 candidates
+3. **Large-Scale Optimization (Notebook 03):** 100+ owned sets, 500+ candidates
+
+## Integration Points
+- Rebrickable CSV data source
+- Snowflake internal stage for data loading
+- Gurobi optimization solver
+
+## Current State
+- All data loaded and verified
+- Views and derived tables created
+- Ready for optimization notebooks in Snowflake Private Preview Notebooks
+
+---
+*This prompt contains all essential information needed to recreate and continue this project from scratch in a new conversation.*
