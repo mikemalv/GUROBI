@@ -19,9 +19,8 @@ venv/
 *.swo
 .DS_Store
 
-# Data files (large CSVs - download from https://rebrickable.com/downloads/)
-# These are excluded because some exceed GitHub's 100MB limit
-DATA/
+# Data files are now tracked with Git LFS
+# Large files (>100MB) are stored in Git LFS
 
 # Snowflake
 .snowflake/
