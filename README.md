@@ -1,7 +1,5 @@
 # 🧱 Toy Brick Assortment Optimization
 
-<img src="https://raw.githubusercontent.com/databricks-industry-solutions/.github/main/profile/solacc_logo.png" width="400px">
-
 [![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?logo=snowflake&logoColor=white&style=for-the-badge)](https://www.snowflake.com/)
 [![Gurobi](https://img.shields.io/badge/Gurobi-EE3524?logo=gurobi&logoColor=white&style=for-the-badge)](https://www.gurobi.com/)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white&style=for-the-badge)](https://www.python.org/)
@@ -313,7 +311,6 @@ model.setObjective(gp.quicksum(set_vars.values()), GRB.MAXIMIZE)
 ## 📚 References
 
 - [Rebrickable Downloads](https://rebrickable.com/downloads/)
-- [Databricks Toy Brick Solution](https://github.com/databricks-industry-solutions/Toy-Brick-Assortment)
 - [Gurobi Documentation](https://www.gurobi.com/documentation/)
 - [Snowflake Snowpark Python](https://docs.snowflake.com/en/developer-guide/snowpark/python/index)
 
@@ -324,14 +321,6 @@ model.setObjective(gp.quicksum(set_vars.values()), GRB.MAXIMIZE)
 - **Project Code**: MIT License
 - **Rebrickable Data**: [Terms of Use](https://rebrickable.com/terms/)
 - **Gurobi**: Requires separate [commercial license](https://www.gurobi.com/solutions/licensing/)
-
----
-
-## 👥 Contributors
-
-Based on the [Databricks Industry Solutions](https://github.com/databricks-industry-solutions/Toy-Brick-Assortment) project, adapted for Snowflake by:
-- Original: Linlin Yang, Juan Morinelli (Aimpoint Digital), Peyman Mohajerian, Bryan Smith (Databricks)
-- Snowflake Adaptation: Claude AI Assistant
 
 ---
 
