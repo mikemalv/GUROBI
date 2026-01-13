@@ -19,8 +19,9 @@ venv/
 *.swo
 .DS_Store
 
-# Data files (large CSVs - uncomment if you don't want to track them)
-# *.csv
+# Data files (large CSVs - download from https://rebrickable.com/downloads/)
+# These are excluded because some exceed GitHub's 100MB limit
+*.csv
 
 # Snowflake
 .snowflake/
