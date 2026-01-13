@@ -109,19 +109,16 @@ git clone https://github.com/mikemalv/GUROBI.git
 cd GUROBI
 ```
 
-### 2. Download Data Files
-Download CSV files from [Rebrickable Downloads](https://rebrickable.com/downloads/) and place them in the `DATA/` folder:
+### 2. Data Files (Included via Git LFS)
+The `DATA/` folder with all CSV files is included in the repo using **Git LFS** (Large File Storage).
+
+When you clone, Git LFS will automatically download the data files:
 ```bash
-mkdir -p DATA
-# Download and place these files in DATA/:
-# themes.csv, sets.csv, inventories.csv, colors.csv
-# parts.csv, part_categories.csv
-# inventory_parts.csv, inventory_sets.csv
-# minifigs.csv, inventory_minifigs.csv
-# elements.csv, part_relationships.csv
+# If you need to manually fetch LFS files:
+git lfs pull
 ```
 
-> ⚠️ **Note**: The `DATA/` folder is excluded from Git due to GitHub's file size limits.
+> ℹ️ Data sourced from [Rebrickable Downloads](https://rebrickable.com/downloads/)
 
 ### 2. Install SnowCLI
 ```bash
@@ -267,14 +264,14 @@ GUROBI/
 ├── 📄 INSTRUCTION.md                        # Detailed setup guide
 ├── 📄 prompt.txt                            # Project context
 ├── 📄 .gitignore                            # Git ignore rules
-├── 📁 DATA/                                 # CSV data files (download separately)
-│   ├── themes.csv
-│   ├── sets.csv
-│   ├── ... (12 CSV files total)
+├── 📄 .gitattributes                        # Git LFS tracking rules
+├── 📁 DATA/                                 # CSV data files (via Git LFS)
+│   ├── themes.csv, sets.csv, colors.csv
+│   ├── parts.csv, inventories.csv
+│   ├── inventory_parts.csv (119MB - LFS)
+│   └── ... (12 CSV files total)
 └── 📁 OLD/                                  # Archived files
 ```
-
-> ⚠️ The `DATA/` folder is excluded from Git. Download CSV files from Rebrickable.
 
 ---
 
